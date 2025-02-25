@@ -48,6 +48,9 @@ export default function Aside() {
                                                 <Link href='/'><li>All Blogs</li></Link>
                                                 <Link href='/'><li>Draft Blogs</li></Link>
                                                 <Link href='/'><li>Add Blogs</li></Link>
+                                                <Link href='/'><li>All Blogs</li></Link>
+                                                <Link href='/'><li>Draft Blogs</li></Link>
+                                                <Link href='/'><li>Add Blogs</li></Link>
                         
 
                                         </ul>
