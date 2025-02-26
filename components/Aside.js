@@ -13,7 +13,7 @@ export default function Aside() {
         const [clicked, setClicked] = useState(false);
         const [activeLink, setActiveLink] = useState('/');
 
-        const handleClick = () => {
+        const handleClick = (link) => {
                 setActiveLink(preActive => (preActive = Link ? null : link));
                 setClicked(false);
         }
@@ -45,18 +45,7 @@ export default function Aside() {
                                                 <Link href='/'><li>All Blogs</li></Link>
                                                 <Link href='/'><li>Draft Blogs</li></Link>
                                                 <Link href='/'><li>Add Blogs</li></Link>
-                                                <Link href='/'><li>All Blogs</li></Link>
-                                                <Link href='/'><li>Draft Blogs</li></Link>
-                                                <Link href='/'><li>Add Blogs</li></Link>
-                                                <Link href='/'><li>All Blogs</li></Link>
-                                                <Link href='/'><li>Draft Blogs</li></Link>
-                                                <Link href='/'><li>Add Blogs</li></Link>
-                                                <Link href='/'><li>All Blogs</li></Link>
-                                                <Link href='/'><li>Draft Blogs</li></Link>
-                                                <Link href='/'><li>Add Blogs</li></Link>
-                                                <Link href='/'><li>All Blogs</li></Link>
-                                                <Link href='/'><li>Draft Blogs</li></Link>
-                                                <Link href='/'><li>Add Blogs</li></Link>
+                                               
                         
 
                                         </ul>
