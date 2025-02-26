@@ -13,9 +13,14 @@ export default function Aside() {
         const [clicked, setClicked] = useState(false);
         const [activeLink, setActiveLink] = useState('/');
 
-        const handleClick = (link) => {
-                setActiveLink(preActive => (preActive = Link ? null : link));
-                setClicked(false);
+
+        const handleClick = () => {
+                setClicked(!clicked);
+        }
+
+        const handleLinkClick = (link) => {
+                setActiveLink(prevActive => (prevActive === link ? null : link))
+                setClicked(false)
         }
 
         useEffect(() => {
@@ -35,20 +40,35 @@ export default function Aside() {
 
                                         </li>
                                 </Link>
-                                <li className="navactive flex-col flex-left">
+                                <li className={activeLink === '/blogs' ? 'navactive flex-col flex-left' : 'flex-col flex-left'} onClick={() => handleLinkClick('/blogs')}>
                                         <div className="flex gap-1">
                                                 <BsPostcard />
                                                 <span>Blogs</span>
                                         </div>
+                                        {activeLink === '/blogs' && (
+                                                <ul>
+                                                        <Link href='/'><li>All Blogs</li></Link>
+                                                        <Link href='/'><li>Draft Blogs</li></Link>
+                                                        <Link href='/'><li>Add Blogs</li></Link>
+                                                </ul>
+                                        )}
 
-                                        <ul>
-                                                <Link href='/'><li>All Blogs</li></Link>
-                                                <Link href='/'><li>Draft Blogs</li></Link>
-                                                <Link href='/'><li>Add Blogs</li></Link>
-                                               
-                        
 
-                                        </ul>
+                                </li>
+                                <li className={activeLink === '/blogs' ? 'navactive flex-col flex-left' : 'flex-col flex-left'} onClick={() => handleLinkClick('/blogs')}>
+                                        <div className="flex gap-1">
+                                                <BsPostcard />
+                                                <span>Blogs</span>
+                                        </div>
+                                        {activeLink === '/blogs' && (
+                                                <ul>
+                                                        <Link href='/'><li>All Blogs</li></Link>
+                                                        <Link href='/'><li>Draft Blogs</li></Link>
+                                                        <Link href='/'><li>Add Blogs</li></Link>
+                                                </ul>
+                                        )}
+
+
                                 </li>
                         </ul>
                 </aside>
